@@ -8,29 +8,24 @@ It is injected with three errors (Section 2). The system has no knowledge of the
 
 ## Description of the Risk Information System (extended version of Section 2 in the paper)
 
-The \emph{Widget} feature determines what graphical information is shown to users, such as a \emph{Map} or \emph{Instructions} on a specific hazard. 
-The \emph{Map} is only present if the location services are activated on the device on which the application is currently running. 
+The Widget feature determines what graphical information is shown to users, such as a Map or Instructions on a specific hazard. 
+The Map is only present if the location services are activated on the device on which the application is currently running. 
 In such a case this feature shows the user where the hazard is occurring.
 If the user is in the impacted zone of the hazard, it may also show the user a route to a safe place.
-In addition to the map, hazard-specific \emph{Instructions} can be shown to users who are in an impacted zone. 
+In addition to the map, hazard-specific Instructions can be shown to users who are in an impacted zone. 
 When several hazards occur simultaneously, the different instructions for each hazard are displayed to the user.
-For the sake of user interface consistency, the \emph{Map} widget should always be placed above the \emph{Instructions} widget. In case of a \emph{Map} is no longer present (e.g., when location services are turned off), the \emph{Instructions} widget should be on top of the application screen. 
+For the sake of user interface consistency, the Map widget should always be placed above the Instructions widget. In case of a Map is no longer present (e.g., when location services are turned off), the Instructions widget should be on top of the application screen. 
 
-The \emph{EmergencyLevel} feature determines the emergency level of an ongoing hazard which may currently affect the user.
-Two different levels are distinguished, \emph{Low} and \emph{High}, depending on the severity of the hazard.
+The EmergencyLevel feature determines the emergency level of an ongoing hazard which may currently affect the user.
+Two different levels are distinguished, Low and High, depending on the severity of the hazard.
 As we consider a cold weather hazard to be less dangerous than a flood, their emergency levels are low and high, respectively.
 The emergency level of a hazard determines how users will be informed about the emergency.
 In case of low emergency level, only warning messages are sent to the user.
 In case of high emergency, the application may issue loud sounds and more intrusive message alerts instead.
 The severity, duration or even the location of the ongoing hazard can be indicated in these messages.
-For simplicity, let us assume that the \emph{Emergency Level} is implemented as a mere integer variable.
-%Martou et al.~\cite{Martou2023CTTVisionPaper} define the \emph{Emergency Level} as a simple integer variable.
-A value 0 means that there is no ongoing hazard. 
-The variable is set to 1 when an emergency of low level occurs, and
-is set to 2 if it has a high emergency level.
+For simplicity, let us assume that the Emergency Level is implemented as a mere integer variable.
+A value 0 means that there is no ongoing hazard.  The variable is set to 1 when an emergency of low level occurs, and is set to 2 if it has a high emergency level.
 When multiple hazards with different emergency levels occur simultaneously, the highest emergency level takes precedence and overrides a lower emergency level.
-
-
 
 ## Requirements
 
